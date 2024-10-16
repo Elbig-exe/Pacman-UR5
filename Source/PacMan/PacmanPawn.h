@@ -37,6 +37,8 @@ public:
 	void SetDirection(const FVector Direction);
 	bool IsFrozen() { return Frozen; }
 
+	UPROPERTY(BlueprintReadWrite)
+	float Score;
 	UFUNCTION(BlueprintCallable)
 		void SetFrozen(bool Value) { Frozen = Value; }
 
