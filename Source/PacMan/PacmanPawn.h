@@ -31,6 +31,8 @@ protected:
 
 	UPROPERTY(BlueprintReadOnly)
 	bool Frozen = true;
+	UPROPERTY(BlueprintReadOnly)
+	float Score;
 
 public:
 
@@ -38,7 +40,7 @@ public:
 	bool IsFrozen() { return Frozen; }
 
 	UPROPERTY(BlueprintReadWrite)
-	float Score;
+	float Life;
 	UFUNCTION(BlueprintCallable)
 		void SetFrozen(bool Value) { Frozen = Value; }
 
