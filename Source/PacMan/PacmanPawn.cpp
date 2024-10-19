@@ -81,7 +81,7 @@ void APacmanPawn::OnOverlapBegin(AActor * PlayerActor, AActor * OtherActor)
 	if (OtherActor->ActorHasTag("Foodie.PowerUp")) {
 		Score = Score + 20;
 		IsFear = true;
-		GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &APacmanPawn::StopFear, 5.0f, false);
+		GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &APacmanPawn::StopFear, 8.0f, false);
 		Cast<AFoodie>(OtherActor)->Consume();
 
 	}
