@@ -26,6 +26,7 @@ public:
 	void MoveDown();
 	void MoveLeft();
 	void MoveRight();
+	bool CanMoveInDirection(const FVector& Direction) const;
 
 
 };
