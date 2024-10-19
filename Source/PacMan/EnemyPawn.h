@@ -23,7 +23,9 @@ class PACMAN_API AEnemyPawn : public APawn
 
 public:
 	// Sets default values for this pawn's properties
-	
+	AEnemyPawn();
+	UPROPERTY(BlueprintReadWrite)
+	bool IsDead;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		EEnemyState State = EEnemyState::Default;
 

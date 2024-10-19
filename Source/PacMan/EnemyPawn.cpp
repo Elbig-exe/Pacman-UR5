@@ -3,6 +3,9 @@
 
 #include "EnemyPawn.h"
 
+AEnemyPawn::AEnemyPawn() {
+	IsDead = false;
+}
 
 void AEnemyPawn::Hunt()
 {
