@@ -4,6 +4,7 @@
 #include "PacmanPawn.h"
 
 #include "Foodie.h"
+#include "TimerManager.h"
 
 // Sets default values
 APacmanPawn::APacmanPawn()
@@ -12,6 +13,7 @@ APacmanPawn::APacmanPawn()
 	PrimaryActorTick.bCanEverTick = true;
 	Score = 0;
 	Life = 3;
+	IsFear = false;
 }
 
 // Called when the game starts or when spawned
@@ -78,8 +80,13 @@ void APacmanPawn::OnOverlapBegin(AActor * PlayerActor, AActor * OtherActor)
 
 	if (OtherActor->ActorHasTag("Foodie.PowerUp")) {
 		Score = Score + 20;
+		IsFear = true;
+		GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &APacmanPawn::StopFear, 8.0f, false);
 		Cast<AFoodie>(OtherActor)->Consume();
 
 	}
+}
+void APacmanPawn::StopFear() {
+	IsFear = false;
 }
 

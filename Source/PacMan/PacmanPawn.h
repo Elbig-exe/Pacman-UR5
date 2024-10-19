@@ -41,13 +41,16 @@ public:
 
 	UPROPERTY(BlueprintReadWrite)
 	float Life;
+	UPROPERTY(BlueprintReadWrite)
+	bool IsFear;
 	UFUNCTION(BlueprintCallable)
 		void SetFrozen(bool Value) { Frozen = Value; }
-
+		void StopFear();
 private:
-
+	FTimerHandle TimerHandle;
 	UFUNCTION()
 		void OnOverlapBegin(AActor* PlayerActor, AActor* OtherActor);
+
 
 
 };
