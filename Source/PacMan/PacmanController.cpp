@@ -38,7 +38,7 @@ bool APacmanController::CanMoveInDirection(const FVector& Direction) const
     FVector End = Start + (Direction * 100.0f);
 
     // Taille de la boîte (ajustez selon la taille de Pac-Man)
-    FVector BoxExtent(60.0f, 60.0f, 60.0f);  // Plus petite boîte pour améliorer la précision
+    FVector BoxExtent(50.0f, 50.0f, 50.0f);  // Plus petite boîte pour améliorer la précision
 
     // Paramètres de collision
     FHitResult HitResult;
@@ -57,8 +57,8 @@ bool APacmanController::CanMoveInDirection(const FVector& Direction) const
     );
 
     // Déboggage : Visualiser la BoxTrace
-    DrawDebugBox(GetWorld(), Start, BoxExtent, FQuat::Identity, FColor::Green, false, 1.0f);
-    DrawDebugBox(GetWorld(), End, BoxExtent, FQuat::Identity, FColor::Red, false, 1.0f);
+    //DrawDebugBox(GetWorld(), Start, BoxExtent, FQuat::Identity, FColor::Green, false, 1.0f);
+    //DrawDebugBox(GetWorld(), End, BoxExtent, FQuat::Identity, FColor::Red, false, 1.0f);
 
     // Retourne true si aucun mur n'est détecté
     return !(bHit && HitResult.GetActor()->ActorHasTag("Wall"));
