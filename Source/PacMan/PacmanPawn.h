@@ -31,7 +31,7 @@ protected:
 
 	UPROPERTY(BlueprintReadOnly)
 	bool Frozen = true;
-	UPROPERTY(BlueprintReadOnly)
+	UPROPERTY(BlueprintReadWrite)
 	float Score;
 
 public:
