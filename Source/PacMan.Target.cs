@@ -9,6 +9,10 @@ public class PacManTarget : TargetRules
 	{
 		Type = TargetType.Game;
 
+
+        // Optionnel : Forcer la configuration du build si nécessaire
+        bOverrideBuildEnvironment = true;
+
 		ExtraModuleNames.AddRange( new string[] { "PacMan" } );
 	}
 }

@@ -10,6 +10,7 @@ public class PacManEditorTarget : TargetRules
     	bOverrideBuildEnvironment = true;
 		Type = TargetType.Editor;
 
+
 		ExtraModuleNames.AddRange( new string[] { "PacMan" } );
 	}
 }
